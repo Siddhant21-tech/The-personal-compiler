@@ -1,0 +1,255 @@
+/*
+ * AI Intern Project Visual Theme System
+ * Tailored premium dark mode, glassmorphism containers, Outfit typography, glowing micro-animations.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap');
+
+:root {
+  --bg-primary: #070b19;
+  --bg-surface: rgba(13, 22, 45, 0.65);
+  --bg-surface-hover: rgba(22, 35, 69, 0.8);
+  --border-color: rgba(99, 102, 241, 0.2);
+  --border-glow: rgba(99, 102, 241, 0.45);
+  
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-accent: #818cf8;
+  
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-purple: #a855f7;
+  
+  --glass-blur: blur(14px);
+  --shadow-neon: 0 0 25px rgba(99, 102, 241, 0.15);
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(99, 102, 241, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, .font-title {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Scrollbars styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(13, 22, 45, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-accent);
+}
+
+/* Glass Container standard */
+.glass-panel {
+  background: var(--bg-surface);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), var(--shadow-neon);
+  transition: var(--transition-fast);
+}
+
+.glass-panel:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+}
+
+/* Modern Glowing button systems */
+.glow-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+  color: #ffffff;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.glow-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.6);
+  opacity: 0.95;
+}
+
+.glow-btn:active {
+  transform: translateY(1px);
+}
+
+.outline-btn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.outline-btn:hover {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--text-accent);
+}
+
+/* Codeblock visual system */
+.code-container {
+  background: rgba(5, 8, 20, 0.95) !important;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13.5px;
+  line-height: 1.6;
+}
+
+/* Animations for pipeline compilation stages */
+@keyframes compilePulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  70% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(99, 102, 241, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.compile-active {
+  animation: compilePulse 2s infinite ease-in-out;
+  border-color: var(--color-purple) !important;
+}
+
+/* Tab controls navigation */
+.sidebar-tab {
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.sidebar-tab.active {
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--text-primary);
+  border-left: 4px solid var(--text-accent);
+}
+
+.sidebar-tab:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-primary);
+}
+
+/* Premium micro-widget cards */
+.metric-card {
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Dynamic Sandbox elements custom overrides */
+.sandbox-sidebar {
+  background: #0d1325;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sandbox-nav-item {
+  color: #94a3b8;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.sandbox-nav-item.active {
+  background: rgba(99, 102, 241, 0.12);
+  color: #818cf8;
+  font-weight: 500;
+}
+
+.sandbox-nav-item:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.table-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.08);
+}
+
+.table-cell {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 13.5px;
+}
+
+/* Class gates restricted alert panel */
+.gate-denied {
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  color: #fca5a5;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.1);
+}
+
+/* Pulse indicator dot */
+.indicator-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.indicator-dot.active {
+  background: var(--color-success);
+  box-shadow: 0 0 10px var(--color-success);
+}
+
+.indicator-dot.offline {
+  background: var(--color-warning);
+  box-shadow: 0 0 10px var(--color-warning);
+}

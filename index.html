@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomad Compiler Engine - qualification round internship task</title>
+  
+  <!-- CSS Stylesheets & Fonts -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Tailwind CSS CDN for quick utility spacing and layouts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Chart.js for gorgeous metrics visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- FontAwesome for modern visual icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- React & Babel CDNs for Zero-Configuration client execution -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <style>
+    /* Prevent initial flashing of blank screen while React mounts */
+    #root:empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.5rem;
+      color: #94a3b8;
+      background-color: #070b19;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="root">
+    <div class="flex flex-col items-center justify-center">
+      <i class="fa-solid fa-circle-notch fa-spin text-4xl text-indigo-500 mb-4"></i>
+      <span>Loading Nomad Compiler Engine...</span>
+    </div>
+  </div>
+
+  <!-- Load Modules and Mount App -->
+  <script src="compiler.js"></script>
+  <script src="runtime.js"></script>
+  <script src="evaluator.js"></script>
+  <script type="text/babel" src="app.js"></script>
+
+</body>
+</html>
